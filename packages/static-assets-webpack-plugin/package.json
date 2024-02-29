@@ -1,7 +1,7 @@
 {
   "name": "@x.render/static-assets-webpack-plugin",
   "version": "0.2.1",
-  "description": "用于wbepack构建器的基础静态资源处理插件",
+  "description": "Static resource processing plug-in",
   "author": "",
   "homepage": "",
   "license": "ISC",
