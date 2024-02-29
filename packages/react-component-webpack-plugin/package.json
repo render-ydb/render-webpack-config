@@ -1,7 +1,7 @@
 {
   "name": "@x.render/react-component-webpack-plugin",
   "version": "0.2.1",
-  "description": "用于webpack构建器编译react组件的基础配置plugin",
+  "description": "Compile plugin for react components",
   "author": "",
   "homepage": "",
   "license": "ISC",
