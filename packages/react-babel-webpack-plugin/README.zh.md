@@ -7,13 +7,13 @@
 
 </p>
 
-[中文文档](./README.zh.md)
+[English document](./README.md)
 
-## Introduce
+## 介绍
 
-Babel configuration plugin that handles react
+处理 react 的 babel 配置插件
 
-## Usage
+## 使用
 
 ```bash
 npm i @x.render/react-babel-webpack-plugin -D

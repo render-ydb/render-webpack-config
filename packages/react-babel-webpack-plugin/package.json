@@ -1,7 +1,7 @@
 {
   "name": "@x.render/react-babel-webpack-plugin",
   "version": "0.2.1",
-  "description": "针对react的babel处理",
+  "description": "Babel configuration plugin that handles react",
   "author": "",
   "homepage": "",
   "license": "ISC",
