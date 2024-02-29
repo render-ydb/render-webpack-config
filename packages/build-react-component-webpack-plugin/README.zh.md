@@ -7,13 +7,13 @@
 
 </p>
 
-[中文文档](./README.zh.md)
+[English document](./README.md)
 
-## Introduce
+## 介绍
 
-Plug-in used by render-builder to compile react components
+render-builder 用来编译 react 组件的插件
 
-## Usage
+## 使用
 
 ```bash
 
@@ -40,7 +40,7 @@ or
 
 ### Options
 
-This plugin supports all configurations of the following plugins:
+该插件支持以下插件的所有配置：
 
 - [@x.render/emit-esm-cjs-webpack-plugin](https://github.com/render-x/render-webpack-config/blob/master/packages/emit-esm-cjs-webpack-plugin/README.md)
 - [@x.render/static-assets-webpack-plugin](https://github.com/render-x/render-webpack-config/blob/master/packages/static-assets-webpack-plugin/README.md)
