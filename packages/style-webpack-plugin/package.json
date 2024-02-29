@@ -1,0 +1,42 @@
+{
+  "name": "@x.render/style-webpack-plugin",
+  "version": "0.2.1",
+  "description": "用于wbepack构建器的基础样式处理插件",
+  "author": "",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/x-render-ydb/render-webpack-config.git"
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@x.render/render-builder": "^1.0.0",
+    "css-loader": "^6.8.1",
+    "less": "^4.2.0",
+    "less-loader": "^11.1.3",
+    "mini-css-extract-plugin": "^2.7.6",
+    "postcss-loader": "^7.3.3",
+    "postcss-px-to-viewport": "^1.1.1",
+    "sass": "^1.69.5",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack-chain": "^6.5.1"
+  },
+  "gitHead": "c08aae7a5d926e4e814877e35a490ef1273113e2"
+}
