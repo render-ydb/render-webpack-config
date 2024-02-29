@@ -9,11 +9,11 @@
 
 [English document](./README.md)
 
-## Introduce
+## 介绍
 
 处理样式的插件
 
-## Usage
+## 使用
 
 ```bash
 npm i @x.render/style-webpack-plugin -D
