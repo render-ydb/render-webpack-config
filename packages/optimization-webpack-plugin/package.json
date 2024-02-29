@@ -1,7 +1,7 @@
 {
   "name": "@x.render/optimization-webpack-plugin",
   "version": "0.2.1",
-  "description": "代码压缩",
+  "description": "Code optimization plugin",
   "author": "",
   "homepage": "",
   "license": "ISC",
