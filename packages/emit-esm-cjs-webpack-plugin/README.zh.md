@@ -7,13 +7,13 @@
 
 </p>
 
-[中文文档](./README.zh.md)
+[English document](./README.md)
 
-## Introduce
+## 介绍
 
 Code optimization plugin
 
-## Usage
+## 使用
 
 ```bash
 npm i @x.render/emit-esm-cjs-webpack-plugin -D
@@ -27,6 +27,6 @@ EmitEsmCjsWebpackPlugin.getConfig(compiler, config, options);
 
 ### Options
 
-| **Name** | **Type** | **Required** | **Default** | **Description**                                  |
-| -------- | -------- | ------------ | ----------- | ------------------------------------------------ |
-| alias    | `Object` | No           |             | Configure the alias of the module reference path |
+| **名称** | **类型** | **必填** | **默认值** | **描述**               |
+| -------- | -------- | -------- | ---------- | ---------------------- |
+| alias    | `Object` | No       |            | 配置模块引用路径的别名 |
