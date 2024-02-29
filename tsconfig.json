@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "CommonJS",
+        "target": "ES5",
+        "moduleResolution": "node",
+        "declaration": true,
+        "resolveJsonModule": true,
+        "lib": ["dom", "es5", "es6", "es7", "scripthost", "es2018.promise"],
+        "experimentalDecorators": true,
+        "skipLibCheck": true,
+        "esModuleInterop":true,
+    },
+}

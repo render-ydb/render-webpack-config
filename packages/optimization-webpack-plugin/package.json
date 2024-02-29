@@ -1,0 +1,34 @@
+{
+  "name": "@x.render/optimization-webpack-plugin",
+  "version": "0.2.1",
+  "description": "代码压缩",
+  "author": "",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/x-render-ydb/render-webpack-config.git"
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@x.render/render-builder": "^1.0.0",
+    "css-minimizer-webpack-plugin": "^5.0.1",
+    "terser-webpack-plugin": "^5.3.9"
+  },
+  "gitHead": "c08aae7a5d926e4e814877e35a490ef1273113e2"
+}

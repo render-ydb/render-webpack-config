@@ -1,0 +1,25 @@
+{
+  "name": "render-webpack-config",
+  "version": "1.0.0",
+  "description": "#### 介绍 用于编写webpack构建器使用的各种plugin和preset的仓库。",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "scripts": {
+    "prepare": "npx render-lint init  --force",
+    "eslint-fix": "eslint \"packages/**/*/src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "render-lint-fix": "npm run eslint-fix",
+    "render-lint-eject": "npx render-lint eject"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.10.5",
+    "@x.render/render-lint": "^1.0.3",
+    "lerna": "^7.4.2",
+    "typescript": "^5.3.3"
+  },
+  "lint-staged": {
+    "packages/**/*/src/**/*.{js,jsx,ts,tsx}": "eslint",
+    "src/**/*.{js,jsx,ts,tsx}": "eslint"
+  }
+}

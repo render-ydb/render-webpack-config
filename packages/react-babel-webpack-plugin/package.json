@@ -1,0 +1,39 @@
+{
+  "name": "@x.render/react-babel-webpack-plugin",
+  "version": "0.2.1",
+  "description": "针对react的babel处理",
+  "author": "",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/x-render-ydb/render-webpack-config.git"
+  },
+  "scripts": {
+    "start": "tsc --watch",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "@babel/core": "^7.22.5",
+    "@babel/preset-env": "^7.22.5",
+    "@babel/preset-react": "^7.22.5",
+    "@babel/preset-typescript": "^7.22.5",
+    "@pmmmwh/react-refresh-webpack-plugin": "^0.5.11",
+    "@x.render/render-builder": "^1.0.0",
+    "babel-loader": "^9.1.2",
+    "react-refresh": "^0.14.0"
+  },
+  "gitHead": "c08aae7a5d926e4e814877e35a490ef1273113e2"
+}
