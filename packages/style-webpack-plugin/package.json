@@ -1,7 +1,7 @@
 {
   "name": "@x.render/style-webpack-plugin",
   "version": "0.2.1",
-  "description": "用于wbepack构建器的基础样式处理插件",
+  "description": "Style processing plugin",
   "author": "",
   "homepage": "",
   "license": "ISC",
