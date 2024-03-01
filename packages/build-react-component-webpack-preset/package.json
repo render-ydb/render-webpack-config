@@ -1,7 +1,7 @@
 {
   "name": "@x.render/build-react-component-webpack-preset",
   "version": "0.2.1",
-  "description": "用于webpack构建器编译react组件的preset",
+  "description": "Preset used by render-builder to compile react components",
   "author": "",
   "homepage": "",
   "license": "ISC",
