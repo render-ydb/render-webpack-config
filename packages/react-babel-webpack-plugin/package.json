@@ -2,7 +2,7 @@
   "name": "@x.render/react-babel-webpack-plugin",
   "version": "0.2.1",
   "description": "Babel configuration plugin that handles react",
-  "author": "",
+  "author": "yangdaobo.render@gmail.com",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",

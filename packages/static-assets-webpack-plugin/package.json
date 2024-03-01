@@ -2,7 +2,7 @@
   "name": "@x.render/static-assets-webpack-plugin",
   "version": "0.2.1",
   "description": "Static resource processing plug-in",
-  "author": "",
+  "author": "yangdaobo.render@gmail.com",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",

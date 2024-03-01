@@ -2,7 +2,7 @@
   "name": "@x.render/build-react-component-webpack-preset",
   "version": "0.2.1",
   "description": "Preset used by render-builder to compile react components",
-  "author": "",
+  "author": "yangdaobo.render@gmail.com",
   "homepage": "",
   "license": "ISC",
   "main": "lib/index.js",
