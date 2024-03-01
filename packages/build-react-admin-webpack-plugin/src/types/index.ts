@@ -3,10 +3,7 @@ import { PluginOptions as AssetPluginOptions } from '@x.render/static-assets-web
 import { PluginOptions as OptimizationPluginOptipns } from '@x.render/optimization-webpack-plugin';
 
 export interface PluginOptions {
-  optimization: {
-    splitChunks: Record<string, any>;
-    [key: string]: any | undefined;
-  };
+  splitChunks: Record<string, any>;
   useAnalyzer: boolean;
 
   // style-webpack-plugin options

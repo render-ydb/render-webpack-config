@@ -7,20 +7,20 @@
 
 </p>
 
-[中文文档](./README.zh.md)
+[English document](./README.md)
 
-## Introduce
+## 介绍
 
-plug-in for render-builder to compile backend projects in react
+render-builder 的插件，用于在 React 中编译后端项目
 
-## Usage
+## 使用
 
 ```bash
 
 npm i @x.render/build-react-admin-webpack-plugin -D
 ```
 
-Use the following configuration in the render-builder configuration file
+在 render-builder 配置文件中使用以下配置：
 
 ```json
 {
@@ -40,12 +40,12 @@ or
 
 ### Options
 
-| **Name**    | **Type**  | **Required** | **Default** | **Description**                                                                                                 |
-| ----------- | --------- | ------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
-| splitChunks | `Object`  | No           |             | refer to [optimizationsplitchunks](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks) |
-| useAnalyzer | `Boolean` | No           | false       | refer to [css-minimizer-webpack-plugin](https://www.npmjs.com/package/webpack-bundle-analyzer)                  |
+| **名称**    | **类型**  | **必填** | **默认值** | **描述**                                                                                                        |
+| ----------- | --------- | -------- | ---------- | --------------------------------------------------------------------------------------------------------------- |
+| splitChunks | `Object`  | No       |            | refer to [optimizationsplitchunks](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks) |
+| useAnalyzer | `Boolean` | No       | false      | refer to [css-minimizer-webpack-plugin](https://www.npmjs.com/package/webpack-bundle-analyzer)                  |
 
-This plugin also supports all configurations of the following plugins:
+该插件还支持以下插件的所有配置：
 
 - [@x.render/static-assets-webpack-plugin](https://github.com/render-x/render-webpack-config/blob/master/packages/static-assets-webpack-plugin/README.md)
 - [@x.render/style-webpack-plugin](https://github.com/render-x/render-webpack-config/blob/master/packages/style-webpack-plugin/README.md)

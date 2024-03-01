@@ -10,10 +10,9 @@ const BundleAnalyzerPlugin =
 export = (config: Chain, options: ConfigParams) => {
   const { rootDir, pluginOptions } = options;
   const {
-    optimization = {} as PluginOptions['optimization']['splitChunks'],
+    splitChunks = {} as PluginOptions['splitChunks'],
     useAnalyzer = false,
   } = pluginOptions;
-  const { splitChunks = {} } = optimization;
 
   // entry
   const appIndexPath = path.resolve(rootDir as string, 'src');
