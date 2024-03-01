@@ -1,6 +1,6 @@
 {
   "name": "@x.render/optimization-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Code optimization plugin",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",

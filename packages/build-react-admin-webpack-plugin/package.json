@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-admin-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "plug-in for render-builder to compile backend projects in react",
   "author": "mvc_ydb_admin <1609059419@qq.com>",
   "homepage": "",
@@ -26,11 +26,11 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "@x.render/optimization-webpack-plugin": "^1.0.0",
-    "@x.render/react-babel-webpack-plugin": "^1.0.0",
+    "@x.render/optimization-webpack-plugin": "^1.0.1",
+    "@x.render/react-babel-webpack-plugin": "^1.0.1",
     "@x.render/render-builder": "^1.0.1",
-    "@x.render/static-assets-webpack-plugin": "^1.0.0",
-    "@x.render/style-webpack-plugin": "^1.0.0"
+    "@x.render/static-assets-webpack-plugin": "^1.0.1",
+    "@x.render/style-webpack-plugin": "^1.0.1"
   },
   "gitHead": "d0834f36a92d0d4f2c65748e7582ecc0eb68a152"
 }
