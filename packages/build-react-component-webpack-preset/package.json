@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-component-webpack-preset",
-  "version": "0.2.1",
+  "version": "1.0.0",
   "description": "Preset used by render-builder to compile react components",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
@@ -25,12 +25,12 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@x.render/emit-esm-cjs-webpack-plugin": "^0.2.1",
-    "@x.render/optimization-webpack-plugin": "^0.2.1",
-    "@x.render/react-babel-webpack-plugin": "^0.2.1",
-    "@x.render/react-component-webpack-plugin": "^0.2.1",
-    "@x.render/static-assets-webpack-plugin": "^0.2.1",
-    "@x.render/style-webpack-plugin": "^0.2.1"
+    "@x.render/emit-esm-cjs-webpack-plugin": "^1.0.0",
+    "@x.render/optimization-webpack-plugin": "^1.0.0",
+    "@x.render/react-babel-webpack-plugin": "^1.0.0",
+    "@x.render/react-component-webpack-plugin": "^1.0.0",
+    "@x.render/static-assets-webpack-plugin": "^1.0.0",
+    "@x.render/style-webpack-plugin": "^1.0.0"
   },
   "gitHead": "c08aae7a5d926e4e814877e35a490ef1273113e2"
 }
