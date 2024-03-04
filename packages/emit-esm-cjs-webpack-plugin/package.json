@@ -1,6 +1,6 @@
 {
   "name": "@x.render/emit-esm-cjs-webpack-plugin",
-  "version": "0.0.9",
+  "version": "1.0.0",
   "description": "Output react components under esm and cjs specifications and generate ts type files",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
