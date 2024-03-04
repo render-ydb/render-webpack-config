@@ -1,6 +1,6 @@
 {
   "name": "@x.render/style-webpack-plugin",
-  "version": "1.0.1",
+  "version": "0.0.9",
   "description": "Style processing plugin",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
