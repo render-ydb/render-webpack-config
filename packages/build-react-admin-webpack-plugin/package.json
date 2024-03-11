@@ -25,7 +25,7 @@
     "build": "tsc",
     "prepublishOnly": "npm run build"
   },
-  "devDependencies": {
+  "dependencies": {
     "@x.render/optimization-webpack-plugin": "file:../optimization-webpack-plugin",
     "@x.render/react-babel-webpack-plugin": "file:../react-babel-webpack-plugin",
     "@x.render/render-builder": "^1.0.0",
