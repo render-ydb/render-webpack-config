@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-admin-webpack-plugin",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "description": "plug-in for render-builder to compile backend projects in react",
   "author": "mvc_ydb_admin <1609059419@qq.com>",
   "homepage": "",
