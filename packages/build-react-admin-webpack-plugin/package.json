@@ -26,12 +26,12 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@x.render/optimization-webpack-plugin": "file:../optimization-webpack-plugin",
-    "@x.render/react-babel-webpack-plugin": "file:../react-babel-webpack-plugin",
+    "@x.render/optimization-webpack-plugin": "^1.1.0",
+    "@x.render/react-babel-webpack-plugin": "^1.1.0",
     "@x.render/render-builder": "^1.0.0",
-    "@x.render/static-assets-webpack-plugin": "file:../static-assets-webpack-plugin",
-    "@x.render/style-webpack-plugin": "file:../style-webpack-plugin",
+    "@x.render/static-assets-webpack-plugin": "^1.1.0",
+    "@x.render/style-webpack-plugin": "^1.1.0",
     "html-webpack-plugin": "^5.6.0"
   },
-  "gitHead": "640b2aa8654b2fd9a025474264f55fcd2faeb4a6"
+  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41"
 }

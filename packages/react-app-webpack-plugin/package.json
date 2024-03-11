@@ -35,5 +35,6 @@
     "react-dev-utils": "^12.0.1",
     "webpack": "^5.89.0",
     "webpackbar": "^5.0.2"
-  }
+  },
+  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41"
 }
