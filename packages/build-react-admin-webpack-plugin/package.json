@@ -31,7 +31,12 @@
     "@x.render/render-builder": "^1.0.0",
     "@x.render/static-assets-webpack-plugin": "^1.1.0",
     "@x.render/style-webpack-plugin": "^1.1.0",
-    "html-webpack-plugin": "^5.6.0"
+    "html-webpack-plugin": "^5.6.0",
+    "react-dev-utils": "^12.0.1",
+    "webpack-bundle-analyzer": "^4.10.1"
   },
-  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41"
+  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41",
+  "devDependencies": {
+    "webpack-chain": "^6.5.1"
+  }
 }
