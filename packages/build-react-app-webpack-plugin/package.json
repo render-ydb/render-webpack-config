@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-app-webpack-plugin",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "Plug-in used by render-builder to compile react app",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
