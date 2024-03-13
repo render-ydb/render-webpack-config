@@ -1,7 +1,8 @@
 import Chain from 'webpack-chain';
+import path = require('path');
 import createDemoPathAndEntryPath = require('../utils/createDemoPathAndEntryPath');
-import { APP_DEMO_DIR_PATH, TARGET_FAVICON_PATH } from '../constants';
-import { PluginOptions } from '../types';
+import { APP_DEMO_DIR_PATH } from '../constants';
+import { PageConfig, PluginOptions } from '../types';
 import { AppConfig, MockConfig } from '@x.render/render-builder';
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,52 +10,39 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const getDevConfig = (
   config: Chain,
   https: boolean,
-  isDevelopment: boolean,
-  options: PluginOptions,
-  appConfig: AppConfig,
-  mockConfig: MockConfig,
+  pageConfigInfo: PageConfig[],
 ) => {
-  const { VConsole = true } = options;
-  const { metas = [], scripts = [], window = {} } = appConfig || {};
-
-  const VConsoleScript =
-    isDevelopment && VConsole
-      ? `  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.15.1/vconsole.min.js"></script>
-  <script>
-    new VConsole();
-  </script>`
-      : '';
-
-  config.entryPoints.clear();
-  createDemoPathAndEntryPath(mockConfig, options.entryDir);
-  config.merge({ entry: { index: APP_DEMO_DIR_PATH } });
-  config.plugin('HtmlWebpackPlugin').use(HtmlWebpackPlugin, [
-    {
-      inject: 'body',
-      favicon: TARGET_FAVICON_PATH,
-      templateContent: () => `
-            <!DOCTYPE html>
-            <html lang="en">
-            <head>
-                <meta charset="UTF-8">
-                <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-              
-                ${metas.join('\n')}
-                <title>${window.title || 'render-app'}</title>
-            </head>
-            <body>
-                <div id="root"></div>
-                ${scripts}
-                ${VConsoleScript}
-            </body>
-            </html>
-          `,
-    },
-  ]);
-
   config.devServer.hot(true);
   config.devServer.https(Boolean(https));
+  config.devServer.historyApiFallback(false);
+  config.devServer.merge({
+    setupMiddlewares: (middlewares, devServer) => {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
+      devServer.app.set('views', path.join(__dirname, '../', 'views'));
+      devServer.app.set('view engine', 'ejs');
+      pageConfigInfo.forEach((pageConfig) => {
+        const { pageTitle, pageName, pageRealRoutePath } = pageConfig;
+        devServer.app.get(pageRealRoutePath, (req, res) => {
+          res.render('dev', {
+            title: pageTitle,
+            jsPath: pageName + '.js',
+          });
+        });
+      });
+
+      devServer.app.use((req, res, next) => {
+        if (req.path.split('.').length === 1) {
+          res.status(404).send('Page Not Found');
+        } else {
+          next();
+        }
+      });
+
+      return middlewares;
+    },
+  });
 };
 
 export = getDevConfig;

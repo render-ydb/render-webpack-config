@@ -6,7 +6,8 @@ import {
 import getbaseConfig from './configs/base';
 import getDevConfig from './configs/dev';
 import getBuildConfig from './configs/build';
-import { PluginOptions } from './types';
+import { AppConfig, PluginOptions } from './types';
+import getPageConfigInfo from './utils/getPageConfigInfo';
 
 const openBrowser = require('react-dev-utils/openBrowser');
 
@@ -19,19 +20,22 @@ export default class BuildReactComponentWebpackPlugin extends WebpackBuilderPlug
 
     const mode = command === 'start' ? 'development' : 'production';
     config.mode(mode);
-    getbaseConfig(config, rootDir, options);
+
+    const pageConfigInfo = getPageConfigInfo(appConfig as AppConfig, rootDir);
+
+    getbaseConfig(
+      config,
+      rootDir,
+      options,
+      appConfig,
+      pageConfigInfo,
+      mode === 'development',
+    );
 
     if (command === 'start') {
-      getDevConfig(
-        config,
-        https,
-        mode === 'development',
-        options,
-        appConfig,
-        mockConfig,
-      );
+      getDevConfig(config, https, pageConfigInfo);
     } else if (command === 'build') {
-      getBuildConfig(config, rootDir, pkg, options.entryDir);
+      getBuildConfig(config, rootDir);
     }
 
     hooks.afterServerStarted.tap('afterServerStarted', ({ url }) => {

@@ -1,8 +1,12 @@
 import path = require('path');
-
+import { Json } from '@x.render/render-builder';
 import Chain from 'webpack-chain';
 import webpack from 'webpack';
-import { PluginOptions } from '../types';
+import getPageConfigInfo = require('../utils/getPageConfigInfo');
+import { AppConfig, PageConfig, PluginOptions } from '../types';
+import setEntry = require('./setEntry');
+import setHtmlTemplate = require('./setHtmlTemplate');
+import createDemoPathAndEntryPath = require('../utils/createDemoPathAndEntryPath');
 
 const WebpackBar = require('webpackbar');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
@@ -11,8 +15,16 @@ const getbaseConfig = (
   config: Chain,
   rootDir: string,
   options: PluginOptions,
+  appConfig: AppConfig,
+  pageConfigInfo: PageConfig[],
+  isDevelopment: boolean,
 ) => {
-  const { define = {}, alias = {} } = options;
+  const { define = {}, alias = {}, VConsole = true } = options;
+
+  createDemoPathAndEntryPath(pageConfigInfo);
+  setEntry(config, pageConfigInfo);
+
+  setHtmlTemplate(pageConfigInfo, config, appConfig, VConsole, isDevelopment);
 
   config.target('web');
   config.context(rootDir);
@@ -49,7 +61,7 @@ const getbaseConfig = (
     config.resolve.alias.set(key, path.resolve(rootDir, alias[key]));
   });
 
-  config.output.filename('index.js');
+  config.output.filename('[name].js');
 
   config
     .plugin('WebpackBar')

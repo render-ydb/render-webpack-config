@@ -1,7 +1,7 @@
 import { PluginOptions as StylePluginOptions } from '@x.render/style-webpack-plugin';
 import { PluginOptions as AssetPluginOptions } from '@x.render/static-assets-webpack-plugin';
 import { PluginOptions as OptimizationPluginOptipns } from '@x.render/optimization-webpack-plugin';
-import { PluginOptions as ReactComponentWebpackPluginOptions } from '@x.render/react-component-webpack-plugin';
+import { PluginOptions as ReactAppWebpackPluginOptions } from '@x.render/react-app-webpack-plugin';
 
 export interface SchemaProperty {
   [key: string]: {
@@ -17,10 +17,10 @@ export type Schema = Partial<{
 }>;
 
 export interface PluginOptions {
-  define?: ReactComponentWebpackPluginOptions['define'];
-  VConsole?: ReactComponentWebpackPluginOptions['VConsole'];
-  alias?: ReactComponentWebpackPluginOptions['alias'];
-  entryDir?: ReactComponentWebpackPluginOptions['entryDir'];
+  define?: ReactAppWebpackPluginOptions['define'];
+  VConsole?: ReactAppWebpackPluginOptions['VConsole'];
+  alias?: ReactAppWebpackPluginOptions['alias'];
+  entryDir?: ReactAppWebpackPluginOptions['entryDir'];
 
   // style-webpack-plugin options
   miniCssExtractPluginLoaderOptions?: StylePluginOptions['miniCssExtractPluginLoaderOptions'];

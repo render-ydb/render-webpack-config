@@ -3,18 +3,17 @@ import {
   ChainConfig,
   WebpackBuilderPluginClass,
 } from '@x.render/render-builder';
-import EmitEsmCjsWebpackPlugin from '@x.render/emit-esm-cjs-webpack-plugin';
 import StaticAssetsWebpackPlugin from '@x.render/static-assets-webpack-plugin';
 import StyleWebpackPlugin from '@x.render/style-webpack-plugin';
 import OptimizationWebpackPlugin from '@x.render/optimization-webpack-plugin';
 import ReactBabelWebpackPlugin from '@x.render/react-babel-webpack-plugin';
-import ReactComponentWebpackPlugin from '@x.render/react-component-webpack-plugin';
+import ReactAppWebpackPlugin from '@x.render/react-app-webpack-plugin';
 import { PluginOptions } from './types';
 
-class BuildReactComponentWebpackPlugin extends WebpackBuilderPluginClass {
+class BuildReactAppWebpackPlugin extends WebpackBuilderPluginClass {
   run(compiler: Compiler, config: ChainConfig, options: PluginOptions = {}) {
     const {
-      // react-component-webpack-plugin options
+      // react-app-webpack-plugin options
       define,
       VConsole,
       alias,
@@ -41,14 +40,13 @@ class BuildReactComponentWebpackPlugin extends WebpackBuilderPluginClass {
       terserPluginOptions,
       cssMinimizerPluginOptions,
     } = options;
-    ReactComponentWebpackPlugin.getConfig(compiler, config, {
+    ReactAppWebpackPlugin.getConfig(compiler, config, {
       define,
       VConsole,
       alias,
       entryDir,
     });
     // Using configurations of other plugins.
-    EmitEsmCjsWebpackPlugin.getConfig(compiler, config, { alias });
     StaticAssetsWebpackPlugin.getConfig(compiler, config, {
       imageSizeLimit,
       imageFilename,
@@ -75,4 +73,4 @@ class BuildReactComponentWebpackPlugin extends WebpackBuilderPluginClass {
     return config;
   }
 }
-export = BuildReactComponentWebpackPlugin;
+export = BuildReactAppWebpackPlugin;

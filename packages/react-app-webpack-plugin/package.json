@@ -23,8 +23,8 @@
     "url": "https://gitee.com/x-render-ydb/render-webpack-config.git"
   },
   "scripts": {
-    "start": "tsc --watch",
-    "build": "tsc",
+    "start": "node copy.js && tsc -w",
+    "build": "node copy.js && tsc",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -36,5 +36,8 @@
     "webpack": "^5.89.0",
     "webpackbar": "^5.0.2"
   },
-  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41"
+  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41",
+  "devDependencies": {
+    "@types/node": "^20.11.25"
+  }
 }

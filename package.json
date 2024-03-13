@@ -6,7 +6,7 @@
   "author": "yangdaobo.render@gmail.com",
   "scripts": {
     "prepare": "npx render-lint init  --force",
-    "eslint-fix": "eslint \"src/**/*.{js,jsx,ts,tsx}\" --fix",
+    "eslint-fix": "eslint \"packages/**/*/src/**/*.{js,jsx,ts,tsx}\" --fix",
     "render-lint-fix": "npm run eslint-fix",
     "render-lint-eject": "npx render-lint eject"
   },
