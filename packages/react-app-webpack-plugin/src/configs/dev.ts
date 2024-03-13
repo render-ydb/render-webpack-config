@@ -34,7 +34,7 @@ const getDevConfig = (
 
       devServer.app.use((req, res, next) => {
         if (req.path.split('.').length === 1) {
-          res.status(404).send('Page Not Found');
+          res.status(404).render('404', { items: pageConfigInfo });
         } else {
           next();
         }

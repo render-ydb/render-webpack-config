@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+      }
+      .errTitle {
+        background-color: rgb(211, 79, 86);
+        color: rgb(255, 255, 255);
+        font-weight: 500;
+        height: 2.5rem;
+        font-size: 20px;
+        padding-top: 1rem;
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        padding-bottom: 1rem;
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+      }
+      .tipContainer {
+        background: rgb(52, 52, 52);
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 1px 4px;
+        color: rgb(255, 255, 255);
+        padding-top: 1rem;
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        padding-bottom: 1rem;
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+      }
+      .list {
+        overflow-y: scroll;
+        flex: 1;
+        background-color: rgb(71, 71, 71);
+        box-sizing: border-box;
+        padding-top: 1rem;
+        padding-right: max(1.5rem, env(safe-area-inset-right));
+        padding-bottom: 1rem;
+        padding-left: max(1.5rem, env(safe-area-inset-left));
+        list-style: none;
+      }
+      .list li {
+        margin-bottom: 1rem;
+      }
+      .list li a {
+        color: rgb(230, 196, 82);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="errTitle">Page Not Found</div>
+    <div class="tipContainer">
+      What you want to request may be the following:
+    </div>
+    <ul class="list">
+      <% for(let i = 0; i < items.length; i++) { %>
+      <li>
+        <a href="<%= items[i].pageRealRoutePath %>"
+          ><%= items[i].pageRealRoutePath %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+  </body>
+</html>
