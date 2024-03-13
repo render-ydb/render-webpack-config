@@ -33,7 +33,7 @@ export default class BuildReactComponentWebpackPlugin extends WebpackBuilderPlug
     );
 
     if (command === 'start') {
-      getDevConfig(config, https, pageConfigInfo);
+      getDevConfig(config, https, pageConfigInfo, appConfig, options.VConsole);
     } else if (command === 'build') {
       getBuildConfig(config, rootDir);
     }

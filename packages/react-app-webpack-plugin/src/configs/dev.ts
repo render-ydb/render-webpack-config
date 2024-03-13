@@ -1,17 +1,15 @@
 import Chain from 'webpack-chain';
 import path = require('path');
-import createDemoPathAndEntryPath = require('../utils/createDemoPathAndEntryPath');
-import { APP_DEMO_DIR_PATH } from '../constants';
-import { PageConfig, PluginOptions } from '../types';
-import { AppConfig, MockConfig } from '@x.render/render-builder';
-
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+import { AppConfig, PageConfig } from '../types';
 
 const getDevConfig = (
   config: Chain,
   https: boolean,
   pageConfigInfo: PageConfig[],
+  appConfig: AppConfig,
+  VConsole: boolean,
 ) => {
+  const { metas = [], scripts = [], window = {} } = appConfig || {};
   config.devServer.hot(true);
   config.devServer.https(Boolean(https));
   config.devServer.historyApiFallback(false);
@@ -27,7 +25,10 @@ const getDevConfig = (
         devServer.app.get(pageRealRoutePath, (req, res) => {
           res.render('template', {
             title: pageTitle,
-            jsPath: pageName + '.js',
+            devChunkJs: pageName + '.js',
+            meta: metas.join('\n'),
+            script: scripts.join('\n'),
+            vconsole: VConsole,
           });
         });
       });
