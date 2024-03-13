@@ -25,7 +25,7 @@ const getDevConfig = (
       pageConfigInfo.forEach((pageConfig) => {
         const { pageTitle, pageName, pageRealRoutePath } = pageConfig;
         devServer.app.get(pageRealRoutePath, (req, res) => {
-          res.render('dev', {
+          res.render('template', {
             title: pageTitle,
             jsPath: pageName + '.js',
           });

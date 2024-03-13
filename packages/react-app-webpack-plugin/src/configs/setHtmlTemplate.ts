@@ -27,25 +27,30 @@ const setHtmlTemplate = (
         favicon: pageConfig.pageRealFaviconPath,
         filename: `${pageName}.html`,
         chunks: [pageName],
-        templateContent: () => `
-                    <!DOCTYPE html>
-                    <html lang="en">
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-                        ${metas.join('\n')}
-                        <title>${
-  pageTitle || window.title || 'render-app'
-}</title>
-                    </head>
-                    <body>
-                        <div id="root"></div>
-                        
-                        ${scripts}
-                        ${VConsoleScript}
-                    </body>
-                    </html>
-                  `,
+        template: path.resolve(__dirname, '../views', 'template.ejs'),
+        templateParameters: (compilation, assets, options) => ({
+          title: pageTitle || window.title || 'render-app',
+          jsPath: '',
+        }),
+        //         templateContent: () => `
+        //                     <!DOCTYPE html>
+        //                     <html lang="en">
+        //                     <head>
+        //                         <meta charset="UTF-8">
+        //                         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+        //                         ${metas.join('\n')}
+        //                         <title>${
+        //   pageTitle || window.title || 'render-app'
+        // }</title>
+        //                     </head>
+        //                     <body>
+        //                         <div id="root"></div>
+
+        //                         ${scripts}
+        //                         ${VConsoleScript}
+        //                     </body>
+        //                     </html>
+        //                   `,
       },
     ]);
   });
