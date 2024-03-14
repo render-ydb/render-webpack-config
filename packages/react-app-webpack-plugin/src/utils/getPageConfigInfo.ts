@@ -8,7 +8,7 @@ const getPageConfigInfo = (
   appConfig: AppConfig,
   rootDir: string,
 ): PageConfig[] => {
-  const { routes } = appConfig;
+  const { routes, window } = appConfig;
   if (!routes) {
     throw new Error('the routes field must be filled in app.json.');
   }
@@ -27,7 +27,7 @@ const getPageConfigInfo = (
     const pageRealRoutePath = route.path + '.html';
     return {
       pageName: route.path.replace('/', ''),
-      pageTitle: title,
+      pageTitle: title || window.title || 'render-app',
       pageSoureDirPath,
       pageSourceEntryPath,
       pageRoutePath: route.path,

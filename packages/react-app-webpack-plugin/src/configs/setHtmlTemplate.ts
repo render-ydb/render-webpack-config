@@ -20,7 +20,7 @@ const setHtmlTemplate = (
         filename: `${pageName}.html`,
         chunks: [pageName],
         template: path.resolve(__dirname, '../views', 'template.ejs'),
-        templateParameters: (compilation, assets, options) => ({
+        templateParameters: () => ({
           title: pageTitle || window.title || 'render-app',
           devChunkJs: '',
           meta: metas.join('\n'),

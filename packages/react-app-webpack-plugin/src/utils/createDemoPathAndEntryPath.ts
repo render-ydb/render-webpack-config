@@ -1,11 +1,5 @@
 import fse = require('fs-extra');
-import path = require('path');
-import {
-  APP_DEMO_DIR_PATH,
-  APP_ENTRY_PATH,
-  APP_RESET_CSS_PATH,
-  APP_FAVICON_PATH,
-} from '../constants';
+import { APP_RESET_CSS_PATH, APP_FAVICON_PATH } from '../constants';
 import getSourceCode = require('./getSourceCode');
 import { PageConfig } from '../types';
 

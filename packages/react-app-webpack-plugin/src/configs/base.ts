@@ -1,8 +1,6 @@
 import path = require('path');
-import { Json } from '@x.render/render-builder';
 import Chain from 'webpack-chain';
 import webpack from 'webpack';
-import getPageConfigInfo = require('../utils/getPageConfigInfo');
 import { AppConfig, PageConfig, PluginOptions } from '../types';
 import setEntry = require('./setEntry');
 import setHtmlTemplate = require('./setHtmlTemplate');
