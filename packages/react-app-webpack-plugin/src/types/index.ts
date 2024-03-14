@@ -11,6 +11,8 @@ interface AppRoute {
   title: string;
   path: string;
   source: string;
+  metas?: string[];
+  scripts?: string[];
 }
 
 interface AppWindow {
@@ -27,14 +29,27 @@ export interface AppConfig {
 export interface PageConfig {
   pageTitle: string;
   pageName: string;
+  pageMetas: string[];
+  pageScripts: string[];
   pageRoutePath: string;
   pageSoureDirPath: string;
   pageSourceEntryPath: string;
   pageSourcePath: string;
-  pageRealFaviconPath: string;
   pageRealDirPath: string;
-  pageResetCssPath: string;
   pageRealJsonPath: string;
   pageRealEntryPath: string;
   pageRealRoutePath: string;
+}
+
+export interface TemplateConfigInfo {
+  config: Array<{
+    pageTitle: PageConfig['pageTitle'];
+    pageName: PageConfig['pageName'];
+    pageRealRoutePath: PageConfig['pageRealRoutePath'];
+    meta: string;
+    script: string;
+  }>;
+  extra: {
+    vconsole: boolean;
+  };
 }

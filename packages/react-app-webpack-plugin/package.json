@@ -11,9 +11,7 @@
     "test": "__tests__"
   },
   "files": [
-    "lib",
-    "reset.css",
-    "favicon.ico"
+    "lib"
   ],
   "publishConfig": {
     "access": "public"

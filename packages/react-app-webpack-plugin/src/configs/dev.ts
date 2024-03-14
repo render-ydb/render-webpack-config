@@ -1,18 +1,21 @@
 import Chain from 'webpack-chain';
 import path = require('path');
-import { AppConfig, PageConfig } from '../types';
+import { TemplateConfigInfo } from '../types';
+import { Compiler } from '@x.render/render-builder';
+import { log } from '@x.render/render-node-utils';
+import chalk = require('chalk');
+
+const openBrowser = require('react-dev-utils/openBrowser');
 
 const getDevConfig = (
   config: Chain,
-  https: boolean,
-  pageConfigInfo: PageConfig[],
-  appConfig: AppConfig,
-  VConsole: boolean,
+  templateConfigInfo: TemplateConfigInfo,
+  hooks: Compiler['hooks'],
 ) => {
-  const { metas = [], scripts = [], window = {} } = appConfig || {};
+  config.output.filename('[name].js');
   config.devServer.hot(true);
-  config.devServer.https(Boolean(https));
   config.devServer.historyApiFallback(false);
+
   config.devServer.merge({
     setupMiddlewares: (middlewares, devServer) => {
       if (!devServer) {
@@ -20,22 +23,23 @@ const getDevConfig = (
       }
       devServer.app.set('views', path.join(__dirname, '../', 'views'));
       devServer.app.set('view engine', 'ejs');
-      pageConfigInfo.forEach((pageConfig) => {
-        const { pageTitle, pageName, pageRealRoutePath } = pageConfig;
+      templateConfigInfo.config.forEach((templateConfig) => {
+        const { pageTitle, pageName, pageRealRoutePath, meta, script } =
+          templateConfig;
         devServer.app.get(pageRealRoutePath, (req, res) => {
           res.render('template', {
             title: pageTitle,
             devChunkJs: pageName + '.js',
-            meta: metas.join('\n'),
-            script: scripts.join('\n'),
-            vconsole: VConsole,
+            meta,
+            script,
+            vconsole: templateConfigInfo.extra.vconsole,
           });
         });
       });
 
       devServer.app.use((req, res, next) => {
         if (req.path.split('.').length === 1) {
-          res.status(404).render('404', { items: pageConfigInfo });
+          res.status(404).render('404', { items: templateConfigInfo.config });
         } else {
           next();
         }
@@ -43,6 +47,30 @@ const getDevConfig = (
 
       return middlewares;
     },
+  });
+
+  hooks.afterServerStarted.tap('afterServerStarted', ({ url }) => {
+    openBrowser(url);
+  });
+  hooks.afterBuild.tap('afterBuild', ({ urls }) => {
+    const { lanUrlForBrowser, localUrlForBrowser } = urls;
+    const printUrl = (url) => {
+      templateConfigInfo.config.forEach((pageConfig) => {
+        log.info(
+          chalk.blue.underline(
+            `${url}${pageConfig.pageRealRoutePath.replace('/', '')}`,
+          ),
+        );
+      });
+    };
+    setImmediate(() => {
+      console.log();
+      log.info('-Local:');
+      printUrl(localUrlForBrowser);
+      console.log();
+      log.info('-Network:');
+      printUrl(lanUrlForBrowser);
+    });
   });
 };
 

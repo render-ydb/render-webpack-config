@@ -1,4 +1,3 @@
-import path = require('path');
 import { formatPathForWin } from '@x.render/render-node-utils';
 
 const getSourceCode = (pagePath: string) => {
@@ -6,7 +5,6 @@ const getSourceCode = (pagePath: string) => {
   const code = `
 import { createRoot } from 'react-dom/client';
 import App from '${appSrcPath}'
-require('./reset.css');
 createRoot(
     document.getElementById('root')
 ).render(
