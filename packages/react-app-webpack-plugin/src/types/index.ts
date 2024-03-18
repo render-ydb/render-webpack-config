@@ -4,7 +4,8 @@ export interface PluginOptions {
   define?: Json;
   VConsole?: boolean;
   alias?: Json;
-  entryDir?: string;
+  splitChunks: Record<string, any>;
+  useAnalyzer: boolean;
 }
 
 interface AppRoute {

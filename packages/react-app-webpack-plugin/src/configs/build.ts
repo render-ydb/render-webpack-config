@@ -3,14 +3,15 @@ import path = require('path');
 import fs = require('fs');
 import { filesize } from 'filesize';
 import gzipSize = require('gzip-size');
-import { TemplateConfigInfo } from '../types';
+import { PluginOptions, TemplateConfigInfo } from '../types';
 import { Compiler } from '@x.render/render-builder';
 import { log } from '@x.render/render-node-utils';
 import recursive = require('recursive-readdir');
-import { CWD } from '../constants';
 import chalk = require('chalk');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const BundleAnalyzerPlugin =
+  require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 interface Memo {
   filename: string;
@@ -22,7 +23,12 @@ const getBuildConfig = (
   templateConfigInfo: TemplateConfigInfo,
   rootDir: string,
   hooks: Compiler['hooks'],
+  options: PluginOptions,
 ) => {
+  const {
+    splitChunks = {} as PluginOptions['splitChunks'],
+    useAnalyzer = false,
+  } = options;
   const outputPath = path.resolve(rootDir, 'build');
   config.devtool(false);
   config.output
@@ -30,12 +36,20 @@ const getBuildConfig = (
     .filename('[name].[contenthash].js')
     .chunkFilename('[id].[contenthash].js');
 
+  useAnalyzer &&
+    config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
+
+  // splitChunks
+  config.optimization.splitChunks({
+    ...splitChunks,
+  });
+
   templateConfigInfo.config.forEach((templateConfig) => {
     const { pageTitle, pageName, meta, script } = templateConfig;
     config.plugin('html-' + pageName).use(HtmlWebpackPlugin, [
       {
         inject: 'body',
-        favicon: path.resolve(process.cwd(), 'public', 'favicon.ico'),
+        favicon: path.resolve(rootDir, 'public', 'favicon.ico'),
         filename: `${pageName}.html`,
         chunks: [pageName],
         template: path.resolve(__dirname, '../views', 'template.ejs'),
@@ -61,9 +75,10 @@ const getBuildConfig = (
         let sizes: Memo[] = [];
 
         if (!err && fileNames) {
-          fileNames.forEach((fileName) => {
+          fileNames.forEach((fileName, index) => {
             const contents = fs.readFileSync(fileName);
-            const filename = path.relative(CWD, fileName);
+            const filename =
+              index + 1 + '. ' + path.relative(rootDir, fileName);
             const size = gzipSize.sync(contents);
             sizes.push({
               filename,
@@ -77,7 +92,7 @@ const getBuildConfig = (
   };
 
   // print bundle info
-  hooks.afterBuild.tap('afterBuild', async () => {
+  hooks.afterBuild.tap('afterBuild', () => {
     setImmediate(() => {
       log.info('Compilation completed, bundle information is being output');
       measureFileSizesBuild(path.resolve(outputPath))

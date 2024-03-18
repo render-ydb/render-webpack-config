@@ -17,7 +17,9 @@ class BuildReactAppWebpackPlugin extends WebpackBuilderPluginClass {
       define,
       VConsole,
       alias,
-      entryDir,
+      splitChunks,
+      useAnalyzer,
+
       // style-webpack-plugin options
       miniCssExtractPluginLoaderOptions,
       styleLoaderOptions,
@@ -44,7 +46,8 @@ class BuildReactAppWebpackPlugin extends WebpackBuilderPluginClass {
       define,
       VConsole,
       alias,
-      entryDir,
+      splitChunks,
+      useAnalyzer,
     });
     // Using configurations of other plugins.
     StaticAssetsWebpackPlugin.getConfig(compiler, config, {

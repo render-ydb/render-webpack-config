@@ -39,7 +39,7 @@ export default class BuildReactComponentWebpackPlugin extends WebpackBuilderPlug
 
     command === 'start' && getDevConfig(config, templateConfigInfo, hooks);
     command === 'build' &&
-      getBuildConfig(config, templateConfigInfo, rootDir, hooks);
+      getBuildConfig(config, templateConfigInfo, rootDir, hooks, options);
 
     return config;
   }
