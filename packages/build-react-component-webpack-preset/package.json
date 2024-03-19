@@ -15,7 +15,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/x-render-ydb/render-webpack-config.git"
+    "url": "https://github.com/render-x/render-webpack-config.git"
   },
   "publishConfig": {
     "access": "public"
