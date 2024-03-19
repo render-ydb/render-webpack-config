@@ -2,11 +2,11 @@ import {
   Compiler,
   WebpackBuilderPluginClass,
   ChainConfig,
-} from '@x.render/render-builder';
-import { PluginOptions } from './types';
+} from "@x.render/render-builder";
+import { PluginOptions } from "./types";
 
-const TerserPlugin = require('terser-webpack-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 export default class OptimizationWebpackPlugin extends WebpackBuilderPluginClass {
   run(compiler: Compiler, config: ChainConfig, options: PluginOptions) {
@@ -15,8 +15,8 @@ export default class OptimizationWebpackPlugin extends WebpackBuilderPluginClass
 
     const { context } = compiler;
     const { command } = context;
-    if (command === 'build') {
-      config.optimization.minimizer('TerserPlugin').use(TerserPlugin, [
+    if (command === "build") {
+      config.optimization.minimizer("TerserPlugin").use(TerserPlugin, [
         {
           parallel: true,
           extractComments: false,
@@ -39,12 +39,12 @@ export default class OptimizationWebpackPlugin extends WebpackBuilderPluginClass
       ]);
 
       config.optimization
-        .minimizer('CssMinimizerPlugin')
+        .minimizer("CssMinimizerPlugin")
         .use(CssMinimizerPlugin, [
           {
             minimizerOptions: {
               preset: [
-                'default',
+                "default",
                 {
                   discardComments: {
                     removeAll: true,
@@ -61,4 +61,4 @@ export default class OptimizationWebpackPlugin extends WebpackBuilderPluginClass
   }
 }
 
-export * from './types';
+export * from "./types";

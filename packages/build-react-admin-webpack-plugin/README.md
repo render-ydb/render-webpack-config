@@ -25,7 +25,7 @@ Use the following configuration in the render-builder configuration file
 ```json
 {
   "builder": "webpack",
-  "presets": ["@x.render/build-react-component-webpack-preset"]
+  "presets": ["@x.render/build-react-component-webpack-plugin"]
 }
 ```
 

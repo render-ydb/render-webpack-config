@@ -11,7 +11,7 @@
 
 ## Introduce
 
-Compile plugin for react app
+Compile plugin for react apps.
 
 ## Usage
 
@@ -27,9 +27,10 @@ ReactAppWebpackPlugin.getConfig(compiler, config, options);
 
 ### Options
 
-| **Name** | **Type**  | **Required** | **Default** | **Description**                                                                                     |
-| -------- | --------- | ------------ | ----------- | --------------------------------------------------------------------------------------------------- |
-| define   | `Object`  | No           |             | refer to [webpack.DefinePlugin](https://webpack.js.org/plugins/define-plugin/#root)                 |
-| VConsole | `Boolean` | No           | true        | Development environment plus vconsole.js                                                            |
-| alias    | `Object`  | No           |             | refer to [webpack alias](https://webpack.js.org/configuration/resolve/#resolvealias)                |
-| entryDir | `Boolean` | No           | src/mobile  | Project entry file directory （The entry directory is relative to the project root directory path） |
+| **Name**    | **Type**  | **Required** | **Default** | **Description**                                                                                                 |
+| ----------- | --------- | ------------ | ----------- | --------------------------------------------------------------------------------------------------------------- |
+| define      | `Object`  | No           |             | refer to [webpack.DefinePlugin](https://webpack.js.org/plugins/define-plugin/#root)                             |
+| VConsole    | `Boolean` | No           | true        | Development environment plus vconsole.js                                                                        |
+| alias       | `Object`  | No           |             | refer to [webpack alias](https://webpack.js.org/configuration/resolve/#resolvealias)                            |
+| splitChunks | `Object`  | No           |             | refer to [optimizationsplitchunks](https://webpack.js.org/plugins/split-chunks-plugin/#optimizationsplitchunks) |
+| useAnalyzer | `Boolean` | No           | false       | refer to [css-minimizer-webpack-plugin](https://www.npmjs.com/package/webpack-bundle-analyzer)                  |

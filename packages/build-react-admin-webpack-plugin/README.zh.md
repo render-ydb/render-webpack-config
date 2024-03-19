@@ -25,7 +25,7 @@ npm i @x.render/build-react-admin-webpack-plugin -D
 ```json
 {
   "builder": "webpack",
-  "presets": ["@x.render/build-react-component-webpack-preset"]
+  "presets": ["@x.render/build-react-component-webpack-plugin"]
 }
 ```
 

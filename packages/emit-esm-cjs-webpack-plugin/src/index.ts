@@ -2,16 +2,16 @@ import {
   Compiler,
   WebpackBuilderPluginClass,
   ChainConfig,
-} from '@x.render/render-builder';
-import { glob } from 'glob';
-import { CompileInfo, PluginOptions } from './types';
-import path from 'path';
-import fse from 'fs-extra';
-import * as babel from '@babel/core';
-import { REG_D_TS, REG_JS } from './constants';
-import getBabelConfig from './utils/getBabelConfig';
-import generateTypeFile from './utils/generateTypeFile';
-import { runTask } from '@x.render/render-node-utils';
+} from "@x.render/render-builder";
+import { glob } from "glob";
+import { CompileInfo, PluginOptions } from "./types";
+import path from "path";
+import fse from "fs-extra";
+import * as babel from "@babel/core";
+import { REG_D_TS, REG_JS } from "./constants";
+import getBabelConfig from "./utils/getBabelConfig";
+import generateTypeFile from "./utils/generateTypeFile";
+import { runTask } from "@x.render/render-node-utils";
 
 export default class EmitEsmCjsWebpackPlugin extends WebpackBuilderPluginClass {
   run(compiler: Compiler, config: ChainConfig, options: PluginOptions) {
@@ -24,10 +24,10 @@ export default class EmitEsmCjsWebpackPlugin extends WebpackBuilderPluginClass {
     const compileFn = () => {
       const sourcePath = `${rootDir}/src`;
       const compileInfo: CompileInfo[] = [];
-      const compileTargets = ['es', 'lib'];
-      const filesPath = glob.sync('**/*.*', {
+      const compileTargets = ["es", "lib"];
+      const filesPath = glob.sync("**/*.*", {
         cwd: sourcePath,
-        ignore: ['node_modules/**'],
+        ignore: ["node_modules/**"],
       });
 
       compileTargets.forEach((target) => {
@@ -52,7 +52,7 @@ export default class EmitEsmCjsWebpackPlugin extends WebpackBuilderPluginClass {
                 ...alias,
               },
             });
-            const rightPath = filePath.replace(REG_JS, '.js');
+            const rightPath = filePath.replace(REG_JS, ".js");
 
             const { code } = babel.transformFileSync(sourceFile, {
               filename: rightPath,
@@ -60,7 +60,7 @@ export default class EmitEsmCjsWebpackPlugin extends WebpackBuilderPluginClass {
             });
             const targetPath = path.join(destPath, rightPath);
             fse.ensureDirSync(path.dirname(targetPath));
-            fse.writeFileSync(targetPath, code, 'utf-8');
+            fse.writeFileSync(targetPath, code, "utf-8");
             compileInfo.push({
               filePath,
               sourceFile,
@@ -73,17 +73,17 @@ export default class EmitEsmCjsWebpackPlugin extends WebpackBuilderPluginClass {
       generateTypeFile(compileInfo, log);
     };
 
-    hooks.afterBuild.tap('afterBuild', () => {
+    hooks.afterBuild.tap("afterBuild", () => {
       runTask([
         {
           beginText: beginTextStyle(
-            'start generating packages with esm and cjs specifications.',
-            '[emit-esm-cjs-webpack-plugin]:',
+            "start generating packages with esm and cjs specifications.",
+            "[emit-esm-cjs-webpack-plugin]:"
           ),
           fn: compileFn,
           endText: endTextStyle(
-            'successfully generated packages with esm and cjs specifications.',
-            '[emit-esm-cjs-webpack-plugin]:',
+            "successfully generated packages with esm and cjs specifications.",
+            "[emit-esm-cjs-webpack-plugin]:"
           ),
         },
       ]);

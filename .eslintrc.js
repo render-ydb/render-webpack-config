@@ -4,5 +4,7 @@ module.exports = getESLintConfig("common-ts", {
     "@typescript-eslint/consistent-type-assertions": "off",
     "@typescript-eslint/no-require-imports": "off",
     "@typescript-eslint/ban-ts-comment": "off",
+    "@typescript-eslint/quotes": "off",
+    "comma-dangle": "off",
   },
 });
