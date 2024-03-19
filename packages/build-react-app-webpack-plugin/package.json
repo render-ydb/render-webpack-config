@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-app-webpack-plugin",
-  "version": "1.2.1",
+  "version": "1.4.0",
   "description": "Plug-in used by render-builder to compile react app",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
@@ -26,12 +26,12 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@x.render/optimization-webpack-plugin": "^1.1.0",
-    "@x.render/react-babel-webpack-plugin": "^1.1.0",
+    "@x.render/optimization-webpack-plugin": "^1.4.0",
     "@x.render/react-app-webpack-plugin": "file:../react-app-webpack-plugin",
+    "@x.render/react-babel-webpack-plugin": "^1.4.0",
     "@x.render/render-builder": "^1.0.0",
-    "@x.render/static-assets-webpack-plugin": "^1.1.0",
-    "@x.render/style-webpack-plugin": "^1.1.0"
+    "@x.render/static-assets-webpack-plugin": "^1.4.0",
+    "@x.render/style-webpack-plugin": "^1.4.0"
   },
   "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41"
 }
