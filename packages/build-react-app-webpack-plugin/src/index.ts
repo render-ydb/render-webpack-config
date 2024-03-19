@@ -2,13 +2,13 @@ import {
   Compiler,
   ChainConfig,
   WebpackBuilderPluginClass,
-} from '@x.render/render-builder';
-import StaticAssetsWebpackPlugin from '@x.render/static-assets-webpack-plugin';
-import StyleWebpackPlugin from '@x.render/style-webpack-plugin';
-import OptimizationWebpackPlugin from '@x.render/optimization-webpack-plugin';
-import ReactBabelWebpackPlugin from '@x.render/react-babel-webpack-plugin';
-import ReactAppWebpackPlugin from '@x.render/react-app-webpack-plugin';
-import { PluginOptions } from './types';
+} from "@x.render/render-builder";
+import StaticAssetsWebpackPlugin from "@x.render/static-assets-webpack-plugin";
+import StyleWebpackPlugin from "@x.render/style-webpack-plugin";
+import OptimizationWebpackPlugin from "@x.render/optimization-webpack-plugin";
+import ReactBabelWebpackPlugin from "@x.render/react-babel-webpack-plugin";
+import ReactAppWebpackPlugin from "@x.render/react-app-webpack-plugin";
+import { PluginOptions } from "./types";
 
 class BuildReactAppWebpackPlugin extends WebpackBuilderPluginClass {
   run(compiler: Compiler, config: ChainConfig, options: PluginOptions = {}) {
@@ -27,7 +27,10 @@ class BuildReactAppWebpackPlugin extends WebpackBuilderPluginClass {
       lessLoaderOptions,
       sassLoaderOptions,
       postcssLoaderOptions,
-      miniCssExtractPluginOptions,
+      miniCssExtractPluginOptions = {
+        filename: "css/[name].[contenthash].css",
+        chunkFilename: "css/[id].[contenthash].css",
+      },
       inlineStyle,
       styleSourceMap,
       useRpx,
