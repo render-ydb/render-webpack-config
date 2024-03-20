@@ -30,6 +30,7 @@
     "@x.render/render-node-utils": "^1.1.1",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
     "chalk": "^4.1.2",
+    "ejs": "^3.1.9",
     "filesize": "^10.1.0",
     "fs-extra": "^11.2.0",
     "gzip-size": "6.0.0",
