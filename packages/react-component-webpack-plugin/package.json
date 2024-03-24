@@ -31,10 +31,14 @@
     "@x.render/render-builder": "^1.0.0",
     "@x.render/render-node-utils": "^1.0.3",
     "case-sensitive-paths-webpack-plugin": "^2.4.0",
+    "fs-extra": "^11.2.0",
     "html-webpack-plugin": "^5.5.4",
     "react-dev-utils": "^12.0.1",
     "webpack": "^5.89.0",
     "webpackbar": "^5.0.2"
   },
-  "gitHead": "640b2aa8654b2fd9a025474264f55fcd2faeb4a6"
+  "gitHead": "640b2aa8654b2fd9a025474264f55fcd2faeb4a6",
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4"
+  }
 }

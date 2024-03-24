@@ -31,7 +31,7 @@ export default class BuildReactComponentWebpackPlugin extends WebpackBuilderPlug
         mockConfig
       );
     } else if (command === "build") {
-      getBuildConfig(config, rootDir, pkg, options.entryDir);
+      getBuildConfig(config, rootDir, pkg, options.entryDir, hooks);
     }
 
     hooks.afterServerStarted.tap("afterServerStarted", ({ url }) => {
