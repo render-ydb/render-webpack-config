@@ -50,7 +50,10 @@ const getBuildConfig = (
     const hasSchemaJson = fse.pathExistsSync(schemaJsonPath);
 
     if (hasSchemaJson) {
-      fse.copyFileSync(schemaJsonPath, path.resolve(outputPath, "schema.json"));
+      fse.copyFileSync(
+        schemaJsonPath,
+        path.resolve(outputPath, appIndexPath, "schema.json")
+      );
     }
   });
 };
