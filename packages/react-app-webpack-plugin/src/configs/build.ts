@@ -1,6 +1,7 @@
 import Chain from "webpack-chain";
 import path = require("path");
 import fs = require("fs");
+import fse from "fs-extra";
 import { filesize } from "filesize";
 import gzipSize = require("gzip-size");
 import { PluginOptions, TemplateConfigInfo } from "../types";
@@ -46,10 +47,12 @@ const getBuildConfig = (
 
   templateConfigInfo.config.forEach((templateConfig) => {
     const { pageTitle, pageName, meta, script } = templateConfig;
+    const faviconPath = path.resolve(rootDir, "public", "favicon.ico");
+    const hasFavicon = fse.pathExistsSync(faviconPath);
     config.plugin("html-" + pageName).use(HtmlWebpackPlugin, [
       {
         inject: "body",
-        favicon: path.resolve(rootDir, "public", "favicon.ico"),
+        favicon: hasFavicon ? faviconPath : "",
         filename: `${pageName}.html`,
         chunks: [pageName],
         template: path.resolve(__dirname, "../views", "template.ejs"),
