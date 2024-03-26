@@ -8,10 +8,10 @@ const getBuildConfig = (
   config: Chain,
   rootDir: string,
   pkg: Json,
-  entryDir?: string,
+  entryDir = "src",
   hooks?: Compiler["hooks"]
 ) => {
-  const appIndexPath = path.resolve(rootDir as string, entryDir || "src");
+  const appIndexPath = path.resolve(rootDir as string, entryDir);
   const entryFileName = getDemoEntryFilename(
     path.resolve(appIndexPath, entryDir)
   );
@@ -46,7 +46,7 @@ const getBuildConfig = (
 
   // copy schema.json
   hooks.afterBuild.tap("afterBuild", () => {
-    const schemaJsonPath = path.resolve(rootDir, "schema.json");
+    const schemaJsonPath = path.resolve(appIndexPath, "schema.json");
     const hasSchemaJson = fse.pathExistsSync(schemaJsonPath);
 
     if (hasSchemaJson) {
