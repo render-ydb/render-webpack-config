@@ -31,7 +31,7 @@
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-runtime": "^7.23.6",
-    "@x.render/react-babel-webpack-plugin": "file:../react-babel-webpack-plugin",
+    "@x.render/react-babel-webpack-plugin": "^1.4.0",
     "@x.render/render-builder": "^1.0.0",
     "@x.render/render-node-utils": "^1.0.3",
     "babel-plugin-module-resolver": "^5.0.0",
@@ -39,5 +39,5 @@
     "glob": "^10.3.10",
     "typescript": "^5.3.3"
   },
-  "gitHead": "640b2aa8654b2fd9a025474264f55fcd2faeb4a6"
+  "gitHead": "993dcf2a372c8873af9a0cac19afcc9eb382561e"
 }
