@@ -29,10 +29,10 @@
     "@x.render/emit-esm-cjs-webpack-plugin": "^1.7.0",
     "@x.render/optimization-webpack-plugin": "^1.4.0",
     "@x.render/react-babel-webpack-plugin": "^1.4.0",
-    "@x.render/react-component-webpack-plugin": "^1.9.1",
+    "@x.render/react-component-webpack-plugin": "file:../react-component-webpack-plugin",
     "@x.render/render-builder": "^1.0.0",
     "@x.render/static-assets-webpack-plugin": "^1.4.0",
     "@x.render/style-webpack-plugin": "^1.4.0"
   },
-  "gitHead": "8eadcb8664d368c5aa04b1eb2b3d4c1d3b69aa5f"
+  "gitHead": "919d79dc560e48aeee4e16c0471f7588e4dca7ab"
 }
