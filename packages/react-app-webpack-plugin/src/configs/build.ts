@@ -47,6 +47,7 @@ const getBuildConfig = (
 
   templateConfigInfo.config.forEach((templateConfig) => {
     const { pageTitle, pageName, meta, script } = templateConfig;
+
     const faviconPath = path.resolve(rootDir, "public", "favicon.ico");
     const hasFavicon = fse.pathExistsSync(faviconPath);
     config.plugin("html-" + pageName).use(HtmlWebpackPlugin, [
