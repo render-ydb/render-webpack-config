@@ -37,7 +37,7 @@
     "webpack": "^5.89.0",
     "webpackbar": "^5.0.2"
   },
-  "gitHead": "9871b1b2e51e6b60ca3bb063e2e1812a3f9c2ab8",
+  "gitHead": "8eadcb8664d368c5aa04b1eb2b3d4c1d3b69aa5f",
   "devDependencies": {
     "@types/fs-extra": "^11.0.4"
   }
