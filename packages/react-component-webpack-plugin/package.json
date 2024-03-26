@@ -1,6 +1,6 @@
 {
   "name": "@x.render/react-component-webpack-plugin",
-  "version": "1.10.0",
+  "version": "1.10.1",
   "description": "Compile plugin for react components",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
