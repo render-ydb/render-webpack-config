@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-component-webpack-plugin",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "Plug-in used by render-builder to compile react components",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
@@ -29,7 +29,7 @@
     "@x.render/emit-esm-cjs-webpack-plugin": "^1.7.0",
     "@x.render/optimization-webpack-plugin": "^1.4.0",
     "@x.render/react-babel-webpack-plugin": "^1.4.0",
-    "@x.render/react-component-webpack-plugin": "^1.8.0",
+    "@x.render/react-component-webpack-plugin": "^1.9.0",
     "@x.render/render-builder": "^1.0.0",
     "@x.render/static-assets-webpack-plugin": "^1.4.0",
     "@x.render/style-webpack-plugin": "^1.4.0"
