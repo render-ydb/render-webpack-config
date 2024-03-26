@@ -1,6 +1,6 @@
 {
   "name": "@x.render/emit-esm-cjs-webpack-plugin",
-  "version": "1.7.0",
+  "version": "1.10.0",
   "description": "Output react components under esm and cjs specifications and generate ts type files",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
@@ -31,7 +31,7 @@
     "@babel/plugin-proposal-private-methods": "^7.18.6",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@babel/plugin-transform-runtime": "^7.23.6",
-    "@x.render/react-babel-webpack-plugin": "^1.4.0",
+    "@x.render/react-babel-webpack-plugin": "^1.10.0",
     "@x.render/render-builder": "^1.0.0",
     "@x.render/render-node-utils": "^1.0.3",
     "babel-plugin-module-resolver": "^5.0.0",

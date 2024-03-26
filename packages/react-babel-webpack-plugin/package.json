@@ -1,6 +1,6 @@
 {
   "name": "@x.render/react-babel-webpack-plugin",
-  "version": "1.4.0",
+  "version": "1.10.0",
   "description": "Babel configuration plugin that handles react",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
