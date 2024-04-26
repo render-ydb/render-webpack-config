@@ -21,8 +21,8 @@
     "url": "https://github.com/render-x/render-webpack-config.git"
   },
   "scripts": {
-    "start": "node copy.js && tsc -w",
-    "build": "node copy.js && tsc",
+    "start": "tsc -w",
+    "build": "tsc",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {

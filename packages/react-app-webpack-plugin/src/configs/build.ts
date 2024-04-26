@@ -1,10 +1,10 @@
 import Chain from "webpack-chain";
 import path = require("path");
 import fs = require("fs");
-import fse from "fs-extra";
+// import fse from "fs-extra";
 import { filesize } from "filesize";
 import gzipSize = require("gzip-size");
-import { PluginOptions, TemplateConfigInfo } from "../types";
+import { PluginOptions } from "../types";
 import { Compiler } from "@x.render/render-builder";
 import { log } from "@x.render/render-node-utils";
 import recursive = require("recursive-readdir");
@@ -21,7 +21,7 @@ interface Memo {
 
 const getBuildConfig = (
   config: Chain,
-  templateConfigInfo: TemplateConfigInfo,
+  // templateConfigInfo: TemplateConfigInfo,
   rootDir: string,
   hooks: Compiler["hooks"],
   options: PluginOptions
@@ -45,28 +45,28 @@ const getBuildConfig = (
     ...splitChunks,
   });
 
-  templateConfigInfo.config.forEach((templateConfig) => {
-    const { pageTitle, pageName, meta, script } = templateConfig;
+  // templateConfigInfo.config.forEach((templateConfig) => {
+  //   const { pageTitle, pageName, meta, script } = templateConfig;
 
-    const faviconPath = path.resolve(rootDir, "public", "favicon.ico");
-    const hasFavicon = fse.pathExistsSync(faviconPath);
-    config.plugin("html-" + pageName).use(HtmlWebpackPlugin, [
-      {
-        inject: "body",
-        favicon: hasFavicon ? faviconPath : "",
-        filename: `${pageName}.html`,
-        chunks: [pageName],
-        template: path.resolve(__dirname, "../views", "template.ejs"),
-        templateParameters: () => ({
-          title: pageTitle,
-          devChunkJs: "",
-          meta,
-          script,
-          vconsole: false,
-        }),
-      },
-    ]);
-  });
+  //   const faviconPath = path.resolve(rootDir, "public", "favicon.ico");
+  //   const hasFavicon = fse.pathExistsSync(faviconPath);
+  //   config.plugin("html-" + pageName).use(HtmlWebpackPlugin, [
+  //     {
+  //       inject: "body",
+  //       favicon: hasFavicon ? faviconPath : "",
+  //       filename: `${pageName}.html`,
+  //       chunks: [pageName],
+  //       template: path.resolve(__dirname, "../views", "template.ejs"),
+  //       templateParameters: () => ({
+  //         title: pageTitle,
+  //         devChunkJs: "",
+  //         meta,
+  //         script,
+  //         vconsole: false,
+  //       }),
+  //     },
+  //   ]);
+  // });
 
   const measureFileSizesBuild = async (
     buildFolder: string
