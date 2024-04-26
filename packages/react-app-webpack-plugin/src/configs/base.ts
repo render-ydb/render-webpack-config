@@ -65,21 +65,17 @@ const getbaseConfig = (
   templateConfigInfo.config.forEach((templateConfig) => {
     const { pageTitle, pageName, meta, script } = templateConfig;
 
-    const faviconPath = path.resolve(rootDir, "public", "favicon.ico");
-    const hasFavicon = fse.pathExistsSync(faviconPath);
     config.plugin("html-" + pageName).use(HtmlWebpackPlugin, [
       {
         inject: "body",
-        favicon: hasFavicon ? faviconPath : "",
         filename: `${pageName}.html`,
         chunks: [pageName],
         template: templateHtmlSrc,
         templateParameters: () => ({
           title: pageTitle,
-          devChunkJs: "",
           meta,
           script,
-          vconsole: false,
+          vconsole: mode === "development" && options.VConsole,
         }),
       },
     ]);
