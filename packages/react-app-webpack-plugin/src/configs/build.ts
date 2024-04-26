@@ -1,7 +1,6 @@
 import Chain from "webpack-chain";
 import path = require("path");
 import fs = require("fs");
-// import fse from "fs-extra";
 import { filesize } from "filesize";
 import gzipSize = require("gzip-size");
 import { PluginOptions } from "../types";
@@ -10,7 +9,6 @@ import { log } from "@x.render/render-node-utils";
 import recursive = require("recursive-readdir");
 import chalk = require("chalk");
 
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
