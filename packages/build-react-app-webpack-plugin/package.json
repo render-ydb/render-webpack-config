@@ -27,11 +27,11 @@
   },
   "dependencies": {
     "@x.render/optimization-webpack-plugin": "^1.10.0",
-    "@x.render/react-app-webpack-plugin": "file:../react-app-webpack-plugin",
+    "@x.render/react-app-webpack-plugin": "^1.13.0",
     "@x.render/react-babel-webpack-plugin": "^1.10.0",
     "@x.render/render-builder": "^1.0.0",
     "@x.render/static-assets-webpack-plugin": "^1.10.0",
-    "@x.render/style-webpack-plugin": "file:../style-webpack-plugin"
+    "@x.render/style-webpack-plugin": "^1.10.0"
   },
-  "gitHead": "993dcf2a372c8873af9a0cac19afcc9eb382561e"
+  "gitHead": "6ebce3d7e9321b2313eafbd8e21ce21977f99d0e"
 }

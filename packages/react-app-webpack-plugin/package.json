@@ -42,7 +42,7 @@
     "webpack-chain": "^6.5.1",
     "webpackbar": "^5.0.2"
   },
-  "gitHead": "8c81aa40a4ec54b52a0438d34e41d9ccca319d41",
+  "gitHead": "6ebce3d7e9321b2313eafbd8e21ce21977f99d0e",
   "devDependencies": {
     "@types/node": "^20.11.25"
   }
