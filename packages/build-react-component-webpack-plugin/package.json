@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-react-component-webpack-plugin",
-  "version": "1.10.1",
+  "version": "1.15.0",
   "description": "Plug-in used by render-builder to compile react components",
   "author": "yangdaobo.render@gmail.com",
   "homepage": "",
@@ -26,7 +26,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@x.render/emit-esm-cjs-webpack-plugin": "^1.10.0",
+    "@x.render/emit-esm-cjs-webpack-plugin": "^1.15.0",
     "@x.render/optimization-webpack-plugin": "^1.10.0",
     "@x.render/react-babel-webpack-plugin": "^1.10.0",
     "@x.render/react-component-webpack-plugin": "file:../react-component-webpack-plugin",
