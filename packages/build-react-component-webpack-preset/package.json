@@ -30,7 +30,8 @@
     "@x.render/react-babel-webpack-plugin": "^1.10.0",
     "@x.render/react-component-webpack-plugin": "^1.10.1",
     "@x.render/static-assets-webpack-plugin": "^1.10.0",
-    "@x.render/style-webpack-plugin": "^1.10.0"
+    "@x.render/style-webpack-plugin": "^1.10.0",
+    "typescript": "^5.3.3"
   },
   "gitHead": "919d79dc560e48aeee4e16c0471f7588e4dca7ab"
 }
