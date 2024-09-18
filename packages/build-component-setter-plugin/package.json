@@ -1,5 +1,5 @@
 {
-  "name": "@x.render/build-react-admin-webpack-plugin",
+  "name": "@x.render/build-component-setter-plugin",
   "version": "1.15.0",
   "description": "用于低代码组件编译内置setter的plugin",
   "author": "render-ydb <yangdaobo.render@gmail.com>",
@@ -29,9 +29,9 @@
     "url": "https://github.com/render-ydb/render-webpack-config/issues"
   },
   "dependencies": {
-    "@x.render/optimization-webpack-plugin": "file:../optimization-webpack-plugin",
-    "@x.render/react-babel-webpack-plugin": "file:../react-babel-webpack-plugin",
+    "@x.render/optimization-webpack-plugin": "^1.10.0",
+    "@x.render/react-babel-webpack-plugin": "^1.10.0",
     "@x.render/render-builder": "^1.0.0",
-    "@x.render/style-webpack-plugin": "file:../style-webpack-plugin"
+    "@x.render/style-webpack-plugin": "^1.10.0"
   }
 }
