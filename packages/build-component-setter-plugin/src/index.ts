@@ -27,7 +27,7 @@ class BuildComponentSetterPlugin extends WebpackBuilderPluginClass {
     // 指定入口文件
     config.entryPoints.clear();
     config.merge({
-      entry: { index: path.resolve(rootDir, __dirname, '../src/setter.js') },
+      entry: { index: path.resolve(rootDir, './src/setter.js') },
     });
 
     const outputPath = path.resolve(rootDir, 'build/dist');
