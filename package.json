@@ -7,13 +7,15 @@
   "scripts": {
     "eslint-fix": "eslint \"packages/**/*/src/**/*.{js,jsx,ts,tsx}\" --fix",
     "render-lint-fix": "npm run eslint-fix",
-    "render-lint-eject": "npx render-lint eject"
+    "render-lint-eject": "npx render-lint eject",
+    "publish": "lerna publish"
   },
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^20.10.5",
     "@x.render/render-lint": "^1.0.3",
     "lerna": "^7.4.2",
+    "nx": "^16.10.0",
     "typescript": "^5.3.3"
   },
   "lint-staged": {
