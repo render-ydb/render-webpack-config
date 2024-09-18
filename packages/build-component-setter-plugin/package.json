@@ -1,6 +1,6 @@
 {
   "name": "@x.render/build-component-setter-plugin",
-  "version": "1.16.1",
+  "version": "1.16.2",
   "description": "用于低代码组件编译内置setter的plugin",
   "author": "render-ydb <yangdaobo.render@gmail.com>",
   "homepage": "https://github.com/render-ydb/render-webpack-config#readme",
