@@ -24,6 +24,21 @@ class BuildComponentSetterPlugin extends WebpackBuilderPluginClass {
       },
     });
 
+    // 创建新的 externals 配置
+    const newExternals = {
+      antd: {
+        commonjs: 'antd',
+        commonjs2: 'antd',
+        amd: 'antd',
+        root: 'antd',
+      },
+    };
+
+    // 使用 merge 方法合并新的 externals 配置
+    config.merge({
+      externals: newExternals,
+    });
+
     // 指定入口文件
     config.entryPoints.clear();
     config.merge({
